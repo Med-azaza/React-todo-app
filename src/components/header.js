@@ -7,7 +7,7 @@ const Header=()=>{
     let [dark,setDark]=useState(false);
     let [icon,setIcon]=useState(sun);
     const toggle=()=>{
-        if(dark==false){
+        if(dark===false){
         document.getElementById('fullpage').setAttribute('class','bglight');
         setIcon(moon);
         setDark(true);

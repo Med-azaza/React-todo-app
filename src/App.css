@@ -1,5 +1,4 @@
 .container {
-  background-color: rgba(218, 64, 64, 0.548);
   min-height: 100vh;
   width: 600px;
 }
@@ -103,6 +102,7 @@ h1 {
 .todos {
   width: 100%;
   background-color: hsl(235, 24%, 19%);
+  border-radius: 3px;
 }
 .todo {
   height: 50px;

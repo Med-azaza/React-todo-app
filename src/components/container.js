@@ -10,7 +10,7 @@ const Container=()=>{
         <div className="container">
             <Header/>
             <Textfield setTextinput={setTextinput} textinput={textinput} setTodos={setTodos} todos={todos}/>
-            <Todos/>
+            <Todos todos={todos} setTodos={setTodos}/>
         </div>
     )
 }
