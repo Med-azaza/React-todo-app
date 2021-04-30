@@ -1,0 +1,117 @@
+.container {
+  background-color: rgba(218, 64, 64, 0.548);
+  min-height: 100vh;
+  width: 600px;
+}
+#fullpage {
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bgdark {
+  background: url("./img/bg-desktop-dark.jpg"), hsl(235, 21%, 11%);
+}
+.bglight {
+  background: url("./img/bg-desktop-light.jpg"), hsl(0, 0%, 98%);
+}
+.header {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+.text {
+  width: 100%;
+  height: 50px;
+  background-color: hsl(235, 24%, 19%);
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+.text input {
+  height: 100%;
+  width: 85%;
+  float: left;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  caret-color: hsl(220, 98%, 61%);
+}
+.check {
+  width: 15%;
+  height: 100%;
+  background-color: transparent;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkbtn {
+  height: 20px;
+  width: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.checked {
+  background: url("./img/icon-check.svg"),
+    linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.addbtn {
+  width: 15%;
+  height: 100%;
+  background-color: transparent;
+  float: left;
+  color: white;
+  border: none;
+}
+.addbtn:hover {
+  background-color: rgba(255, 255, 255, 0.185);
+}
+.addbtn:active {
+  background-color: #fff;
+  color: black;
+}
+.rem {
+  width: 15%;
+  height: 100%;
+  background-color: transparent;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rembtn {
+  height: 20px;
+  width: 20px;
+  background-image: url("./img/icon-cross.svg");
+  background-repeat: no-repeat;
+}
+.todos {
+  width: 100%;
+  background-color: hsl(235, 24%, 19%);
+}
+.todo {
+  height: 50px;
+}
+.todo-item {
+  display: block;
+  width: 70%;
+  height: 100%;
+  float: left;
+  padding: 20px;
+  color: white;
+}
