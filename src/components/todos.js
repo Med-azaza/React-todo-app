@@ -5,8 +5,8 @@ import Todo from './todo';
 const Todos=(props)=>{
     const [filter,setFilter]=useState('all');
     const [ftodos,setFtodos]=useState([]);
-    const filterHandler=()=>{
-        switch(filter){
+        useEffect(()=>{
+               switch(filter){
             case 'completed':
                 setFtodos(props.todos.filter((el)=> el.completed===true));
                 break;
@@ -15,10 +15,10 @@ const Todos=(props)=>{
                 break;
             case 'all':
                 setFtodos(props.todos);
+                break;
+            default:
+                break;
         }
-    }
-        useEffect(()=>{
-        filterHandler();
     },[props.todos,filter])
     return(
         <div className="todos">
