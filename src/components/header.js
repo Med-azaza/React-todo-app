@@ -20,7 +20,7 @@ const Header=()=>{
     return(
         <div className="header">
             <h1>T O D O</h1>
-            <img src={icon} onClick={toggle} alt="darkmode toggle icon"/>
+            <img src={icon} onClick={toggle} className='darkmodebtn' alt="darkmode toggle icon"/>
         </div>
     )
 }

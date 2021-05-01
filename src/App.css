@@ -61,6 +61,7 @@ h1 {
   width: 20px;
   border: 1px solid white;
   border-radius: 50%;
+  cursor: pointer;
 }
 .checked {
   background: url("./img/icon-check.svg"),
@@ -76,6 +77,7 @@ h1 {
   float: left;
   color: white;
   border: none;
+  cursor: pointer;
 }
 .addbtn:hover {
   background-color: rgba(255, 255, 255, 0.185);
@@ -83,6 +85,9 @@ h1 {
 .addbtn:active {
   background-color: #fff;
   color: black;
+}
+.darkmodebtn {
+  cursor: pointer;
 }
 .rem {
   width: 15%;
@@ -92,6 +97,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .rembtn {
   height: 20px;
@@ -103,9 +109,11 @@ h1 {
   width: 100%;
   background-color: hsl(235, 24%, 19%);
   border-radius: 3px;
+  min-height: 50px;
 }
 .todo {
   height: 50px;
+  border-bottom: 1px solid rgba(179, 169, 169, 0.137);
 }
 .todo-item {
   display: block;
@@ -114,4 +122,27 @@ h1 {
   float: left;
   padding: 20px;
   color: white;
+}
+.checkedtxt {
+  color: rgba(128, 128, 128, 0.486);
+  text-decoration: line-through;
+}
+.footer {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.329);
+  padding: 10px;
+}
+.filters span:hover {
+  color: white;
+  cursor: pointer;
+}
+.filters span {
+  margin: 0 10px;
+}
+.selected {
+  color: hsl(220, 98%, 61%);
 }
