@@ -2,9 +2,10 @@ import React,{useState,useEffect} from 'react';
 import Todo from './todo';
 
 
-const Todos=({todos ,setTodos,ftodos,setFtodos})=>{
+const Todos=({todos ,setTodos})=>{
     const [filter,setFilter]=useState('all');
     const [left,setLeft]=useState(0);
+        const [ftodos,setFtodos]=useState([]);
     useEffect(()=>{
         let count=0;
         todos.map((el)=> {

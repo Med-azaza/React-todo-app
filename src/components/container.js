@@ -6,7 +6,6 @@ import Todos from './todos';
 const Container=()=>{
     const [textinput,setTextinput]=useState('');
     const [todos,setTodos]=useState([]);
-    const [ftodos,setFtodos]=useState([]);
     useEffect(()=>{
                 if (localStorage.getItem('todos')=== null){
             localStorage.setItem('todos', JSON.stringify([]));
@@ -22,7 +21,7 @@ const Container=()=>{
         <div className="container">
             <Header/>
             <Textfield setTextinput={setTextinput} textinput={textinput} setTodos={setTodos} todos={todos}/>
-            <Todos ftodos={ftodos} setFtodos={setFtodos} todos={todos} setTodos={setTodos}/>
+            <Todos todos={todos} setTodos={setTodos}/>
         </div>
     )
 }
