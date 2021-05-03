@@ -14,7 +14,7 @@
   background: url("./img/bg-desktop-dark.jpg"), hsl(235, 21%, 11%);
 }
 .bglight {
-  background: url("./img/bg-desktop-light.jpg"), hsl(0, 0%, 98%);
+  background: url("./img/bg-desktop-light.jpg"), hsl(0, 2%, 88%);
 }
 .header {
   height: 150px;
@@ -199,6 +199,11 @@ ul {
 *::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: rgba(92, 87, 87, 0.411);
+}
+li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 @media (max-width: 425px) {
   .container {
