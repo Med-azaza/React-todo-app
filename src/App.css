@@ -34,6 +34,7 @@ h1 {
   background-color: hsl(235, 24%, 19%);
   border-radius: 3px;
   margin-bottom: 20px;
+  color: white;
 }
 .text input {
   height: 100%;
@@ -42,10 +43,14 @@ h1 {
   background-color: transparent;
   border: 0;
   outline: none;
-  color: white;
+  color: inherit;
   font-size: 18px;
   font-weight: 400;
   caret-color: hsl(220, 98%, 61%);
+}
+.textlight {
+  color: black;
+  background-color: #fff;
 }
 .check {
   width: 15%;
@@ -59,7 +64,7 @@ h1 {
 .checkbtn {
   height: 20px;
   width: 20px;
-  border: 1px solid white;
+  border: 1px solid rgba(128, 128, 128, 0.61);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -75,16 +80,24 @@ h1 {
   height: 100%;
   background-color: transparent;
   float: left;
-  color: white;
+  color: inherit;
   border: none;
   cursor: pointer;
+  border-radius: 3px 0 0 3px;
 }
 .addbtn:hover {
   background-color: rgba(255, 255, 255, 0.185);
 }
+.textlight .addbtn:hover {
+  background-color: rgba(128, 128, 128, 0.479);
+}
 .addbtn:active {
   background-color: #fff;
   color: black;
+}
+.textlight .addbtn:active {
+  background-color: black;
+  color: white;
 }
 .darkmodebtn {
   cursor: pointer;
@@ -97,19 +110,24 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 }
 .rembtn {
   height: 20px;
   width: 20px;
   background-image: url("./img/icon-cross.svg");
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 .todos {
   width: 100%;
   background-color: hsl(235, 24%, 19%);
   border-radius: 3px;
   min-height: 50px;
+  color: white;
+}
+.todoslight {
+  background-color: #fff;
+  color: black;
 }
 .todo {
   height: 50px;
@@ -121,7 +139,6 @@ h1 {
   height: 100%;
   float: left;
   padding: 20px;
-  color: white;
 }
 .checkedtxt {
   color: rgba(128, 128, 128, 0.486);
@@ -136,13 +153,78 @@ h1 {
   color: rgba(255, 255, 255, 0.329);
   padding: 10px;
 }
+.footerlight {
+  color: gray;
+}
 .filters span:hover {
   color: white;
   cursor: pointer;
 }
+.footerlight .filters span:hover {
+  color: black;
+  cursor: pointer;
+}
 .filters span {
   margin: 0 10px;
+  user-select: none;
 }
 .selected {
   color: hsl(220, 98%, 61%);
+}
+.clear {
+  user-select: none;
+}
+.clear:hover {
+  color: white;
+  cursor: pointer;
+}
+.footerlight .clear:hover {
+  color: black;
+  cursor: pointer;
+}
+ul {
+  max-height: 330px;
+  overflow-y: auto;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #f5f5f500;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f500;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(92, 87, 87, 0.411);
+}
+@media (max-width: 425px) {
+  .container {
+    width: 90vw;
+  }
+  .bgdark {
+    background: url("./img/bg-mobile-dark.jpg"), hsl(235, 21%, 11%);
+    background-size: contain;
+  }
+  .bglight {
+    background: url("./img/bg-mobile-light.jpg"), hsl(0, 0%, 98%);
+    background-size: contain;
+  }
+  .itemsleft {
+    display: none;
+  }
+  .clear {
+    display: none;
+  }
+  .filters {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  ul {
+    max-height: 230px;
+  }
 }

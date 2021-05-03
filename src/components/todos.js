@@ -4,35 +4,52 @@ import Todo from './todo';
 
 const Todos=(props)=>{
     const [filter,setFilter]=useState('all');
-    const [ftodos,setFtodos]=useState([]);
+    const [left,setLeft]=useState(0);
+    useEffect(()=>{
+        let count=0;
+        props.todos.map((el)=> {
+            if(el.completed===false){
+                count++;
+            }
+        });
+        setLeft(count);
+    },[props.todos])
         useEffect(()=>{
                switch(filter){
             case 'completed':
-                setFtodos(props.todos.filter((el)=> el.completed===true));
+                props.setFtodos(props.todos.filter((el)=> el.completed===true));
                 break;
             case 'active':
-                setFtodos(props.todos.filter((el)=> el.completed===false));
+                props.setFtodos(props.todos.filter((el)=> el.completed===false));
                 break;
             case 'all':
-                setFtodos(props.todos);
+                props.setFtodos(props.todos);
                 break;
             default:
                 break;
         }
     },[props.todos,filter])
+    const clear=()=>{
+        props.setTodos(props.todos.filter((el)=>{
+            return !(el.completed);
+        }));
+        props.setFtodos(props.ftodos.filter((el)=>{
+            return !(el.completed);
+        }));
+    }
     return(
         <div className="todos">
             <ul className='todo-list'>
-                {ftodos.map((item) =>(<Todo obj={item} todos={props.todos} status={item.completed} setTodos={props.setTodos} key={item.id} content={item.text}/>))}
+                {props.ftodos.map((item) =>(<Todo obj={item} todos={props.todos} status={item.completed} setTodos={props.setTodos} key={item.id} content={item.text}/>))}
             </ul>
             <div className="footer">
-                <div>items left</div>
+                <div className='itemsleft'>{left} items left</div>
                 <div className='filters'>
                     <span onClick={()=>setFilter('all')} className={`${filter==='all' ? "selected":""}`}>All </span>
                     <span onClick={()=>setFilter('active')} className={`${filter==='active' ? "selected":""}`}>Active </span>
                     <span onClick={()=>setFilter('completed')} className={`${filter==='completed' ? "selected":""}`}>Completed</span>
                 </div>
-                <div>Clear Completed</div>
+                <div> <span onClick={clear} className='clear'> Clear Completed</span></div>
             </div>
         </div>
     )
