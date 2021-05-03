@@ -7,22 +7,16 @@ const Container=()=>{
     const [textinput,setTextinput]=useState('');
     const [todos,setTodos]=useState([]);
     const [ftodos,setFtodos]=useState([]);
-    const save=()=>{
-            localStorage.setItem('todos',JSON.stringify(todos))
-    }
-    const getlocal=()=>{
-        if (localStorage.getItem('todos')=== null){
+    useEffect(()=>{
+                if (localStorage.getItem('todos')=== null){
             localStorage.setItem('todos', JSON.stringify([]));
         } else {
             let local=JSON.parse(localStorage.getItem('todos'));
             setTodos(local);
         }
-    }
-    useEffect(()=>{
-        getlocal();
     },[])
     useEffect(()=>{
-        save();
+        localStorage.setItem('todos',JSON.stringify(todos));
     },[todos]);
     return(
         <div className="container">
