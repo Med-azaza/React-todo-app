@@ -2,45 +2,46 @@ import React,{useState,useEffect} from 'react';
 import Todo from './todo';
 
 
-const Todos=(props)=>{
+const Todos=({todos ,setTodos,ftodos,setFtodos})=>{
     const [filter,setFilter]=useState('all');
     const [left,setLeft]=useState(0);
     useEffect(()=>{
         let count=0;
-        props.todos.map((el)=> {
+        todos.map((el)=> {
             if(el.completed===false){
                 count++;
             }
+            return el;
         });
         setLeft(count);
-    },[props.todos])
+    },[todos])
         useEffect(()=>{
                switch(filter){
             case 'completed':
-                props.setFtodos(props.todos.filter((el)=> el.completed===true));
+                setFtodos(todos.filter((el)=> el.completed===true));
                 break;
             case 'active':
-                props.setFtodos(props.todos.filter((el)=> el.completed===false));
+                setFtodos(todos.filter((el)=> el.completed===false));
                 break;
             case 'all':
-                props.setFtodos(props.todos);
+                setFtodos(todos);
                 break;
             default:
                 break;
         }
-    },[props.todos,filter])
+    },[todos,filter])
     const clear=()=>{
-        props.setTodos(props.todos.filter((el)=>{
+        setTodos(todos.filter((el)=>{
             return !(el.completed);
         }));
-        props.setFtodos(props.ftodos.filter((el)=>{
+        setFtodos(ftodos.filter((el)=>{
             return !(el.completed);
         }));
     }
     return(
         <div className="todos">
             <ul className='todo-list'>
-                {props.ftodos.map((item) =>(<Todo obj={item} todos={props.todos} status={item.completed} setTodos={props.setTodos} key={item.id} content={item.text}/>))}
+                {ftodos.map((item) =>(<Todo obj={item} todos={todos} status={item.completed} setTodos={setTodos} key={item.id} content={item.text}/>))}
             </ul>
             <div className="footer">
                 <div className='itemsleft'>{left} items left</div>
