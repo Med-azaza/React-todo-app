@@ -7,8 +7,10 @@ const Textfield= (props)=>{
         props.setTextinput(e.target.value);
     }
     const submit=(e)=>{
-        props.setTodos([...props.todos,{text: props.textinput, completed: false, id: Math.random()*1000}]);
-        props.setTextinput('');
+        if (props.textinput !== '') {
+            props.setTodos([...props.todos, { text: props.textinput, completed: false, id: Math.random() * 1000 }]);
+            props.setTextinput('');
+        }
     }
     const enter=(e)=>{
         if (e.keyCode===13){
